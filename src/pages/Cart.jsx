@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom";
 import { increase ,decrease} from "../reducers/productSlice"; // Assuming you have action creators for increasing and decreasing quantities
 import '../styles.css';
 
-function DisplayTodoPage() {
+function Cart() {
   const products = useSelector((state) => state.todos.todos);
+  console.log(products)
 
   const dispatch = useDispatch();
   const history = useNavigate();
@@ -40,7 +41,7 @@ function DisplayTodoPage() {
                   <h3 className="card-title">{product.name}</h3>
                   <p className="card-text">{product.description}</p>
                   <p><b>Model:{product.brand}</b></p>
-                  <p><b>Total Price:{product.price}</b></p>
+                  <p><b>Total Price:{product.totalprice}</b></p>
                   <p><b>Quantity:{product.quantity}</b></p>
                   <button onClick={() => handleIncrease(product.id)} style={{ "marginRight": "10%" }} className="btn btn-primary">+</button>
                   <button onClick={() => handleDecrease(product.id)} className="btn btn-primary">-</button>
@@ -54,4 +55,4 @@ function DisplayTodoPage() {
   );
 }
 
-export default DisplayTodoPage;
+export default Cart;
