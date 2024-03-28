@@ -36,7 +36,7 @@ const todoSlice = createSlice({
       else{
         const Index = state.todos.findIndex(item => item.id === action.payload);
         state.todos[Index].quantity--;
-        state.todos[existingIndex].price=state.todos[existingIndex].price-state.todos[existingIndex].price;
+       state.todos[Index].price=state.todos[Index].price-state.todos[Index].price;
       }
       
     },
